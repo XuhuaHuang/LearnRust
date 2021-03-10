@@ -7,7 +7,4 @@ Teacher in Electronics and Information Technology program
 Heritage College, Gatineau, Quebec, Canada  
 
 ## Language
-**Rust**  
-
-## Message
-> Contains all code when self learning other concepts in Rust.
+**Rust**
