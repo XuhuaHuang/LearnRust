@@ -9,3 +9,6 @@ Heritage College, Gatineau, Quebec, Canada
 
 ## Language
 **Rust**
+> The Rust Programming Language: https://doc.rust-lang.org/book/title-page.html  
+> Rust by Example: https://doc.rust-lang.org/rust-by-example/  
+> The Cargo Book: https://doc.rust-lang.org/cargo/index.html
