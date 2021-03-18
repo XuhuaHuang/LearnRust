@@ -1,6 +1,6 @@
 
 /** References and Borrowing in Rust
-  * Xuhua HUANG
+  * Xuhua Huang
   * Feb 2021
   */
 
