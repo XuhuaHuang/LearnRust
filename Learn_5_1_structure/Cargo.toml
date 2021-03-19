@@ -1,0 +1,9 @@
+[package]
+name = "Learn_5_1_structure"
+version = "0.1.0"
+authors = ["Xuhua Huang <xuhuahuang0412@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
