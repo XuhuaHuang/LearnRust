@@ -1,4 +1,4 @@
-/** 6_1_enumeration_2.rs
+/** 6_2_enum_example.rs
   * Another example with enumerations in Rust
   * With enum Message and implementation block
   *
