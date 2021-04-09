@@ -87,7 +87,7 @@ fn main() {
     }
 
     // specified range for loop
-    for num in(1..4).rev() {
+    for num in (1..4).rev() {
         println!("Reversing: {}", num);
     }
     println!("\nExited the ranged for loop!");
