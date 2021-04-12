@@ -65,10 +65,46 @@ fn main() {
     // added a reference of String world to the String hello
     // implicit conversion from &String to &str to fit + operator
     // hello has been moved and no longer available
-    println!("\nTwo String objects are concatenated to form Hello, world!");
+    println!("Two String objects are concatenated to form Hello, world!");
     print_string(&hello_world);
 
     /* format! marco */
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+
+    let s = s1 + "-" + &s2 + "-" + &s3;
+    println!("printing tic tac toe concatenated with + operator");
+    print_string(&s);
+
+    println!("printing tic tac toe concatenated with format! marco");
+    let s1 = String::from("tic"); let s2 = String::from("tac"); let s3 = String::from("toe");
+    let s = format!("{}-{}-{}", s1, s2, s3);
+    print_string(&s);
+
+    /* INDEXING INTO STRINGS */
+    // let s1 = String::from("hello");
+    // let h = s1[0]; // ERROR! Type String can not be indexed by integer
+    //         ^^^^^ `String` cannot be indexed by `{integer}`
+
+    /* Internal Representation of Strings */
+    /* A String is a wrapper over a Vec<u8> */
+    /* Slicing Strings with O(1) time complexity */
+    let hello = "Здравствуйте";
+    let s = &hello[0..4];
+    println!("printing first two bytes in string literal \"Здравствуйте\"");
+    print_string(&String::from(s));
+
+    /* ITERATING STRING OBJECTS */
+    let hello_mandarin = String::from("你好");
+    println!("iterating characters in String object \"你好\"");
+    for char in hello_mandarin.chars() {
+        println!("{}", char);
+    }
+    println!("iterating bytes in String object \"你好\"");
+    for byte in hello_mandarin.bytes() {
+        println!("{}", byte);
+    }
 }
 
 // function to print the content of a String object
