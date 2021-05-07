@@ -17,7 +17,7 @@
   */
 
 fn main() {
-    println!("Let's about UTF-8 Encoded Strings");
+    println!("Let's talk about UTF-8 Encoded Strings");
 
     /* CREATE A NEW STRING */
     let mut str = String::new(); // create a new, empty string
