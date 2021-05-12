@@ -10,6 +10,7 @@
   * look up data by using an index
   * 'HashMap<K, V>'
   */
+
 fn main() {
     println!("Let's talk about key-value pairs in Rust!");
 
