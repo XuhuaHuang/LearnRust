@@ -3,7 +3,7 @@
  *
  * Xuhua Huang
  * Created: May 2021
-Last updated: July 2021
+ * Last updated: July 2021
  */
 
 use std::cmp::Ordering;
