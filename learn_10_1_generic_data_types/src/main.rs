@@ -1,7 +1,7 @@
 /** 10_1_generic_data_types.rs
  * Define functions, structs, enums and methods using generics
  * Discuss how generics affect code performance
- *
+ * `Template` in C++
  * Xuhua Huang
  * Created: July 24, 2021
  * Last updated: July 24, 2021
@@ -59,7 +59,15 @@ fn largest<T>(list: &[T]) -> T {
 }
 */
 
+/* Generic typing in public struct */
+#[derive(Debug)]
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
 fn main() {
+    println!(); // added this python style of new line
     println!("Let's talk about generic data types in Rust!");
 
     /* Generic data types used in function definitions */
@@ -76,6 +84,14 @@ fn main() {
     let result: char= largest_char(&char_list);
     println!("The largest character in the list is: {}", result);
 
+    // using public struct  Point
+    let integer = Point {x: 5, y: 10};
+    let float = Point {x: 1.0, y: 4.0};
+    println!("Point created with integer is {:#?}", integer);
+    println!("Point created with float is {:#?}", float);
+    // *note: just like in C++, x and y have to share the same type 'T' unless otherwise specified
+    // let point_wont_work = Point {x: 1, y: 5.0}; // expected integer, found floating-point number
+    // for example, struct Point<Int, Flt> { x: Int, y: Flt, }
 }
 
-// TODO: generics in structs and method
+// TODO: generics in Enum definitions
