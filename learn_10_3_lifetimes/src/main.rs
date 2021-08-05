@@ -3,6 +3,7 @@
 * https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#validating-references-with-lifetimes
 * every reference in Rust has a lifetime, the scope for which that reference is valid
 * demo for common ways programmers might encounter lifetime syntax
+* TODO: automated tests in Rust https://doc.rust-lang.org/book/ch11-00-testing.html
 *
 * Xuhua Huang
 * Created: Aug 2, 2021
@@ -10,7 +11,10 @@
  */
 
 mod lib;
-use learn_10_3_lifetimes::first_word;
+use learn_10_3_lifetimes::{
+    first_word,
+    longest_with_an_announcement,
+};
 
 fn main() {
     println!(); // added this python style of new line
@@ -49,6 +53,10 @@ fn main() {
     // println!("The longest string is \"{}\"", result); // ERROR! borrowed value does not live long
 
     demonstrate_lifetime_structs();
+    demonstrate_lifetime_strings();
+
+    /* Static Lifetime Keyword */
+    let s:&'static str = "I have a static lifetime.";
 }
 
 // Previously method signature: fn find_longest_str(x: &str, y: &str) -> &str {
@@ -67,7 +75,17 @@ struct ImportantExcerpt<'a> {
     part: &'a str,
 }
 
-//
+// adding lifetime annotations in method definitions
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> u8 {
+        3
+    }
+
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please {}", announcement);
+        self.part
+    }
+}
 
 fn demonstrate_lifetime_structs() {
     let novel: String = String::from("Call me Ismael. Some years ago...");
