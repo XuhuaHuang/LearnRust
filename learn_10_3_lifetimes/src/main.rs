@@ -6,8 +6,11 @@
 *
 * Xuhua Huang
 * Created: Aug 2, 2021
-* Last updated: Aug 2, 2021
+* Last updated: Aug 3, 2021
  */
+
+mod lib;
+use learn_10_3_lifetimes::first_word;
 
 fn main() {
     println!(); // added this python style of new line
@@ -43,7 +46,9 @@ fn main() {
         let alphabet_tail: String = String::from("xyz");
         result = find_longest_str(long_str.as_str(), alphabet_tail.as_str());
     }
-    println!("The longest string is \"{}\"", result);
+    // println!("The longest string is \"{}\"", result); // ERROR! borrowed value does not live long
+
+    demonstrate_lifetime_structs();
 }
 
 // Previously method signature: fn find_longest_str(x: &str, y: &str) -> &str {
@@ -54,4 +59,36 @@ fn find_longest_str<'a>(x: &'a str, y: &'a str) -> &'a str {
     } else {
         y
     }
+}
+
+/* Lifetime Annotations in Structs */
+// an instance of ImportantExcerpt can’t outlive the reference it holds in its part field
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+//
+
+fn demonstrate_lifetime_structs() {
+    let novel: String = String::from("Call me Ismael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+}
+
+fn demonstrate_lifetime_strings() {
+    let my_string = String::from("hello world");
+
+    // first_word works on slices of `String`s
+    let word = first_word(&my_string[..]);
+
+    let my_string_literal = "hello world";
+
+    // first_word works on slices of string literals
+    let word = first_word(&my_string_literal[..]);
+
+    // Because string literals *are* string slices already,
+    // this works too, without the slice syntax!
+    let word = first_word(my_string_literal);
 }
