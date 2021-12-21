@@ -12,5 +12,5 @@
  */
 
 fn main() {
-    println!("Hello, world!"); // ! stands fot marco instead of function
+    println!("Hello, world!"); // ! means it's a pre-defined marco from the standard library instead of a custom-defined function
 }
