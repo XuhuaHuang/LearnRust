@@ -29,3 +29,17 @@ Heritage College, Gatineau, Quebec, Canada
 ---
 
 ## Commonly Used Commnads in Rust
+```Bash
+# update rustup
+$ rustup self update
+# set nightly version to default for academic purpose
+$ rustup default nightly
+# Install Rust Language Server (RSL)
+$ rustup component add rls --toolchain nightly
+$ rustup component add rust-analysis --toolchain nightly
+$ rustup component add rust-src --toolchain nightly
+# see the basics of rustc compiler
+$ rustc -h
+# see the basics of cargo (package management tool)
+$ cargo -h
+```
