@@ -43,3 +43,11 @@ $ rustc -h
 # see the basics of cargo (package management tool)
 $ cargo -h
 ```
+
+---
+
+## Interesting Facts
+1. Rust manages code based on `crate` and `mod`; Think of `crate` as projects, each `crate` is a complete unit for compilling, delievering an `.exe` or `.lib` file.  
+Inside each `crate`, `mod` is placed as namespaces.
+2. By default, the `rustc` compiler introduces dependancy to the `stdlib`; In addition to that, the compiler automatically adds an `use` statement for each `crate` developed by the user: `use std::prelude::*;` for commonly used `type`, `trait`, `function` and `macro`.  
+The source code of the `prelude` module is placed in `/src/libstd/prelude/` directory.
