@@ -1,8 +1,8 @@
-// _002_hello_user.rs
+// hello_user.rs
 // brief: print greeting to user when running with command line argument.
 // to compile and run, execute:
-// rustc _002_hello_user.rs
-// ./_002_hello_user
+// rustc hello_user.rs
+// ./hello_user
 
 use std::env;
 
