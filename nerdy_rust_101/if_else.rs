@@ -14,6 +14,7 @@
 fn main() {
 /* Simple demonstration */
 let rust_is_awesome: bool = true;
+// following if-else returns empty () as the actual value
 if rust_is_awesome {
     println!("Indeed Rust is awesome!");
 } else {
