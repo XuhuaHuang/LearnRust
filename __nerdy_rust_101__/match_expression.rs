@@ -19,5 +19,6 @@ fn main() {
         other => {
             println!("Request failed with code: {}", other);
         }
+        // other is equivalent to using _ to ignore irrelevant values
     }
 }
