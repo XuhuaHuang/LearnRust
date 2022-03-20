@@ -1,6 +1,6 @@
-// use statemwnts
+// use statements
 extern crate rand;
-use std::io; // input/outpout library
+use std::io; // input/output library
 use rand::Rng; // Rng trait defines methods for random number generator
 use std::cmp::Ordering; // bring this to scope from standard library
 						// Ordering is an enum [Less, Greater, Equal]
@@ -35,7 +35,7 @@ fn main() {
 
 		println!("You guessed: {}", guess);
 
-		// comapre guess to secret_number
+		// compare guess to secret_number
 		// match statement consists arms
 		// cmp() method returns an arm
 		match guess.cmp(&secret_number) {
@@ -47,4 +47,5 @@ fn main() {
 			} // end Ordering::Equal arm
 		} // end match
 	} // end loop
+
 } // end main
