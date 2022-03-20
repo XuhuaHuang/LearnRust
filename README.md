@@ -1,7 +1,10 @@
 # LearnRust
 This repository is dedicated to contain code written with Cargo while self-learning coding in Rust.  
-All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project.  
-Please use code responsibly.  
+All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project. Please use code responsibly.  
+
+---
+
+## Getting Started
 To run all project in this repository, make sure you already installed `cargo` by running the `cargo --version` in the terminal.
 ```Bash
 # check the version of cargo
@@ -14,10 +17,14 @@ $ cargo build
 $ cargo run
 ```
 
+---
+
 ## Special Thanks
 **Prof. Hussam AI-Hertani**  
 Teacher in Electronics and Information Technology program  
 Heritage College, Gatineau, Quebec, Canada  
+
+---
 
 ## Language
 **Rust**  
