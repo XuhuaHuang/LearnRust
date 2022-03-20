@@ -1,9 +1,10 @@
-/** lib.rs
-* media aggregator library
-*
-* Xuhua Huang
-* Created: Aug 1, 2021
-* Last updated: Aug 2, 2021
+/**
+ * lib.rs
+ * media aggregator library
+ * 
+ * Xuhua Huang
+ * Created: Aug 1, 2021
+ * Last updated: Aug 2, 2021
  */
 
 /* Provide  Signature for a Commonly Implemented Method */
