@@ -10,5 +10,14 @@ fn request_status() -> u32 {
 }
 
 fn main() {
+    let status: u32 = request_status();
 
+    /* Use a match expression to determine the status */
+    match status {
+        200 => println!("Request Success"),
+        404 => println!("Not Found"),
+        other => {
+            println!("Request failed with code: {}", other);
+        }
+    }
 }
