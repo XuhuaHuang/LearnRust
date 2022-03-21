@@ -11,7 +11,7 @@
 mod front_of_house {
     // 1/2 child module
     mod hosting {
-        fn get_empty_space() -> bool {}
+        fn get_empty_space() -> bool { true }
 
         fn add_to_waitlist() {}
 
