@@ -1,4 +1,5 @@
 # LearnRust
+[![wakatime](https://wakatime.com/badge/github/XuhuaHuang/LearnRust.svg)](https://wakatime.com/badge/github/XuhuaHuang/LearnRust)  
 This repository is dedicated to contain code written with Cargo while self-learning coding in Rust.  
 All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project. Please use code responsibly.  
 
