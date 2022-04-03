@@ -3,7 +3,7 @@
   * Feb 2021
   */
 
-// Slice lets us to refer to a contignous sequence of elements in a collection
+// Slice lets us to refer to a contiguous sequence of elements in a collection
 // rather than the whole collection
 
 fn main() {
@@ -16,7 +16,7 @@ fn main() {
 
     // SOLUTION to floating variables: string slices
     // refer to a portion of portion
-    // creat slices with brackets: [starting_index, ending_index]
+    // create slices with brackets: [starting_index, ending_index]
     // starting_index is inclusive, ending_index is exclusive
     let mut greeting = String::from("hello world");
     let hello = &greeting[0..5]; // let hello = &greeting[..5];
@@ -33,19 +33,19 @@ fn main() {
 
     // with rewritten function that returns a reference
     let index = rewrite_slice(&greeting); // expected 6
-    // attempting to clear Stirng
+    // attempting to clear string
     // greeting.clear(); // ERROR! A pointer to the string is returned to "index"
-    println!{"\nVariable \"index\" is returned as: \"{}\" with function \"rewrit_slice()\" as a pointer", index};
+    println!{"\nVariable \"index\" is returned as: \"{}\" with function \"rewrite_slice()\" as a pointer", index};
 
 
     // String Literals as Slices
-    // stirng literals are automatically string slices already
+    // string literals are automatically string slices already
     // &str is the syntax of string literals, equivalent to &String[], refer to line 66 and 67
 
     // UPCOMING: Struct, object oriented FINALLY!
 }
 
-// returns a bype index value into the String parameter
+// returns a byte index value into the String parameter
 fn first_word(s: &String) -> usize {
     // convert String to an array of bytes using "as_bytes()" method
     let bytes = s.as_bytes();
@@ -54,7 +54,7 @@ fn first_word(s: &String) -> usize {
     // (i, &item) is tuple: "i" - index, returned from enumerate()
     //                      "&item" - reference to the element
     for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' { // if we find a spcae with byte literal syntax
+        if item == b' ' { // if we find a space with byte literal syntax
             return i; // return the index
         }
     }
@@ -64,7 +64,7 @@ fn first_word(s: &String) -> usize {
 
 
 // &str means string literals
-// allows this funcntion to take both &String and &str values
+// allows this function to take both &String and &str values
 fn rewrite_slice(s: &str) -> &str {
     let bytes = s.as_bytes();
 
