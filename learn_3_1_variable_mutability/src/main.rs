@@ -7,17 +7,18 @@ fn main() {
 
     // create a mutable variable named "x"
     // mutable means the value of this variable can be overwritten
-    // vatiable without the mut keyword could be understood as static
+    // variable without the mut keyword could be understood as static
     let mut x = 5;
 
-    // creat another variable named "y" without keyword "mut"
+    // create another variable named "y" without keyword "mut"
     let y = 6;
 
-    // attempt to change value
+    // attempt to change the value of both x and y
+    // changing the value of an immutable y will cause an error
     x = 7;
     // y = 8; // ERROR!
 
-    // outut result
+    // output result
     println!("The value of x is: {}", x);
     println!("The value of y is: {}", y);
 
@@ -35,7 +36,7 @@ fn main() {
 
     // ADVANTAGE of shadowing
     // effectively creating new variable with "let" -> possible to change type
-    // reuage of the same variable name
+    // reuse the same variable name
 
     // UPCOMING: variable type
     // let mut tab = "    "; // contains 4 \s
