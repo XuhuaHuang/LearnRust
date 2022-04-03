@@ -19,7 +19,7 @@ fn main() {
     // Rust will not automatically try to convert non-Boolean value to a Boolean
     if true {
         println!("The \"if\" condition is true");
-    } // arm assoiciated to "if"
+    } // arm associated to "if"
     else if true {
         println!("The \"else if\" condition is true");
     }
@@ -45,7 +45,7 @@ fn main() {
 
 
     // REPETITION & LOOPS
-    // inifinte loop
+    // infinite loop
     // loop {
     //     // code to loop
     // }
