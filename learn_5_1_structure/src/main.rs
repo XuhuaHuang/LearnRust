@@ -1,5 +1,5 @@
 /** Structure in Rust
-  * Xuhua Huuang
+  * Xuhua Huang
   * Feb 2021
   */
 
