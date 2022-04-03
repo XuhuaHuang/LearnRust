@@ -6,22 +6,22 @@
 /**
   * Introduction
   * Rust's approach to memory management
-  * System of Ownership with a set of rules that compiler checkes atcompile time
+  * System of Ownership with a set of rules that compiler checks at compile time
   * STACK VS. HEAP
   * Stack: Known, fixed size data type
   *        last in, first out -> pile of plates
-  *        pushing onto the stack / poppinng off the stack
+  *        pushing onto the stack / popping off the stack
   * Heap:  Unknown size at compile time / size may change
   *        Allocating on the heap -> follow a pointer to find actual data
   *        Need one allocate with one free with heap variable
-  * * Pushing to satck is faster than allocating on heap
+  * * Pushing to stack is faster than allocating on heap
   * * Accessing data on stack is faster than on the heap
   */
 
 /** Ownership RULES
   * Each value has its own owner
   * One owner at a time
-  * Value will be droped when the owner goes out of the scope
+  * Value will be dropped when the owner goes out of the scope
   */
 
 fn main() {
@@ -31,12 +31,12 @@ fn main() {
     let greeting = "Hello"; // string literals stored on the stack, immutable, fixed size
     // string literals are hardcoded directly to the final executable
 
-    // conver to "String" data type and allocate it to the heap
+    // convert to "String" data type and allocate it to the heap
     let mut greeting = String::from("Hello");
     greeting.push_str(", world!"); // append to string
 
     // output
-    println!("\nThe \"String\" type variale is now allocated on the heap.");
+    println!("\nThe \"String\" type variable is now allocated on the heap.");
     println!("Variable \"greeting\" is now: {}", greeting);
 
     // String contains three parts, all on stack
@@ -44,7 +44,7 @@ fn main() {
     // capacity, the amount of memory received from the allocator
     let ptr1 = String::from("Hello");
     let ptr2 = ptr1; // only copy pointer, length and capacity on the stack to new String
-    // ptr1 and ptr2 now both contaon the same address pointing to the memory contains "hello"
+    // ptr1 and ptr2 now both contain the same address pointing to the memory contains "hello"
     // ptr1 is no longer a valid variable, it is "moved" to ptr2
     // since ptr1 is not valid, drop() will only get called when ptr2 goes out of the scope
 
@@ -61,11 +61,11 @@ fn main() {
 
     // Ownership and Functions
     take_ownership(ptr2);
-    // "ptr2" is nolonger valid since the function dropped it before passing back control
+    // "ptr2" is no longer valid since the function dropped it before passing back control
 
 
     // Return Value and Ownership
-    let ptr3 = give_ownership(); // overwrit with function String content
+    let ptr3 = give_ownership(); // overwrite with function String content
     let (ptr3, length) = calculate_string_length(ptr3);
     // (ptr3, length) is a tuple of type (String, i32)
 
