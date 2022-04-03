@@ -9,7 +9,7 @@
 fn main() {
     // INTEGER
     // could be signed or unsigned
-    // signed interfer types start with "i", unsigned ingeter types start with "u"
+    // signed integer types start with "i", unsigned integer types start with "u"
     // length could be 8-bit, 16-bit, 32-bit, 64-bit, 128-bit
     // notice that signed numbers are stored using two's complement representation
     // relying on integer overflow's wrapping behavior is considered as an error
@@ -20,7 +20,7 @@ fn main() {
     println!("The value of an unsigned 8-bit integer \"int1\" is: {}", int1);
 
     // FLOATING-POINT
-    // f32 and f64 -> 32-bit and 64-bit repectively
+    // f32 and f64 -> 32-bit and 64-bit respectively
     let x = 2.0; // defaulted to f64 with double precision
     let y: f32 = 3.0; // f32 with single precision
     // output
@@ -37,7 +37,7 @@ fn main() {
     // BOOLEAN
     let t = true;
     let mut f: bool = false; // with explicit type annotation
-    f = true; // success with ketword "mut", as discussed in the previous notes
+    f = true; // success with keyword "mut", as discussed in the previous notes
 
     // CHARACTER
     // 4 bytes Unicode Scalar Value
@@ -53,7 +53,7 @@ fn main() {
     // tup is a tuple with 32-bit signed integer, 64-bit floating point, 8-bit unsigned integer
     let (x, y, z) = tup; // tie three variables to tuple tup, automatically linked
     // output
-    println!("\nPrinting tuple \"tup\" elements x, y, z sequencially: {}, {}, {}", x, y, z);
+    println!("\nPrinting tuple \"tup\" elements x, y, z sequentially: {}, {}, {}", x, y, z);
 
     // access tuple element with "tuple_name.index" -> index the value want to access
     let five_hundred = tup.0; // 600
@@ -65,7 +65,7 @@ fn main() {
 
     // ARRAY
     // element in the array must have the same type with fixed size
-    // written as comma-seperated list inside square brackets - [1, 2, 3]
+    // written as comma-separated list inside square brackets - [1, 2, 3]
     let months: [&str; 12] = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
 
@@ -79,7 +79,7 @@ fn main() {
     // array of size provided with initial_value as elements
     let a = [3; 5]; // [3, 3, 3, 3, 3]
 
-    // access ndividual element
+    // access individual element
     // array_name[index_of_element]
     let a: [i32; 5] = [1, 2, 3, 4, 5]; // reuse the same variable name as discussed before
     let first_element = a[0];
