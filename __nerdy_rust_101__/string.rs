@@ -9,6 +9,6 @@ fn main() {
     // &str objects are allocated on the stack.
     // `String` objects are allocated on the heap.
     let person: String = "Andy".to_string();
-    
+
     println!("Hello {}\n{}", person, greeting_question);
 }
