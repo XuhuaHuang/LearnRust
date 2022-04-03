@@ -16,7 +16,7 @@
 
 fn main() {
     println!("Hello, world!");
-    println!("\nLet's talk about references in Rust!");
+    println!("Let's talk about references in Rust!\n");
 
     let greeting = String::from("Hello");
     let length_greeting = calculate_length(&greeting);
@@ -31,7 +31,7 @@ fn main() {
     // NOTE: only one mutable reference to a particular variable
     // Multiple references is allowed, as long as there isn't a mutable reference in the same scope
     let ptr1 = &mut greeting; // OK, valid mutable borrow within the main() scope
-    // let ptr2 = &mut greeting; // ERROR! Pointer is alreaddy captured with ptr1
+    // let ptr2 = &mut greeting; // ERROR! Pointer is already captured with ptr1
     // println!("{}, {}", ptr1, ptr2); // ERROR!
     println!("\nWith mutable reference ptr1: {}", ptr1);
     // ptr1 is no longer valid here
@@ -52,7 +52,7 @@ fn main() {
 
 // function that asks for a reference without taking over the ownership
 // we call having references as function parameters borrowing
-// data passed by reference cannot be **borrowd** as mutable without "mut"
+// data passed by reference cannot be **borrowed** as mutable without "mut"
 fn calculate_length(arg_str: &String) -> usize {
     arg_str.len() // using expression to return
 }
