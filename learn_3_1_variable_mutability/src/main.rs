@@ -22,7 +22,7 @@ fn main() {
     println!("The value of x is: {}", x);
     println!("The value of y is: {}", y);
 
-    // Shadowing
+    /* Variable Shadowing */
     // create variable with the same name with keyword "let"
     // the newer variable shadows the previous one
     // newer value of the variable appears when it is used
