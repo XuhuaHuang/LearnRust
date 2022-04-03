@@ -6,7 +6,7 @@
 /**
   * CONVENTION
   * snake case style for function and variable names
-  * all lower case and seperated by underscores
+  * all lower case and separated by underscores
   */
 
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
     let some_num = 8; // this statement does not return any value
     // let some_num = (let some_num = 8); // ERROR! no value is returned to bind
 
-    // expresstion:
+    // expression:
     // evaluate to something, do NOT include ending semicolons
     let some_num = { // new scope
         let other_num = 9;
@@ -35,7 +35,7 @@ fn main() {
     }; // close scope
 
     // RETURN VALUES
-    // syntax: fn funtion_name(parameter_list) -> return_type { function_body }
+    // syntax: fn function_name(parameter_list) -> return_type { function_body }
     let five = return_five(); // equivalent to statement "let five = 5;"
     // output
     println!("\nThe value of variable \"five\" is: {}", five);
