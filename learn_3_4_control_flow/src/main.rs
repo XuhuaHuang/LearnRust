@@ -27,7 +27,7 @@ fn main() {
         println!("The \"else\" condition is true");
     }
 
-    let some_num = 3;
+    let some_num: u8 = 3;
     if some_num != 0 {
         println!("Variable \"some_num\" is not equal to 0");
     }
