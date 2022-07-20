@@ -8,7 +8,9 @@ fn main() {
     // create a mutable variable named "x"
     // mutable means the value of this variable can be overwritten
     // variable without the mut keyword could be understood as static
+    // prefix with an underscore to avoid warning of unused variable
     let mut x = 5;
+    println!("The value of x is: {}", x);
 
     // create another variable named "y" without keyword "mut"
     let y = 6;
