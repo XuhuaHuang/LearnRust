@@ -22,7 +22,7 @@ impl Guess {
             panic!("Guess must be between 1 and 100. Got {}", value);
         }
 
-        Guess(value)
+        Guess { value }
     }
 
     // function to get value

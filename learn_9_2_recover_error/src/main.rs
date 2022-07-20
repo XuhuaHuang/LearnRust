@@ -53,8 +53,8 @@ fn main() {
     }; // end matching
 
     /* Shortcuts for Panic on Error: unwrap and expect */
-    let f = File::open(hello.txt).unwrap();
-    let f = File::open(hello.txt).expect("Failed to open hello.txt");
+    let f = File::open("hello.txt").unwrap();
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
     // expect() takes parameter as customized error message
 
     /* Propagating Errors */

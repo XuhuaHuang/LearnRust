@@ -6,6 +6,7 @@
   */
 
 // Coin enum and UsState from '6_2_match_operator.rs'
+#[derive(Debug)]
 enum Coin {
     Penny,
     Nickel,
@@ -64,6 +65,12 @@ fn main() {
     } else { // if coin is NOT one of the Quarters with UsState
         count += 1;
     }
+
+    let coin_nickel: Coin = Coin::Nickel;
+    println!("Nickel: {:?}", coin_nickel);
+
+    let coin_dime: Coin = Coin::Dime;
+    println!("Dime: {:?}", coin_dime);
 
     println!("Times the operator did NOT find an exact execution arm: {}", count);
 }

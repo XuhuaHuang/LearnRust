@@ -18,8 +18,9 @@ fn main() {
     println!("Hello, world!");
     println!("Let's talk about references in Rust!\n");
 
-    let greeting = String::from("Hello");
-    let length_greeting = calculate_length(&greeting);
+    let greeting: String = String::from("Hello");
+    let length_greeting: usize = calculate_length(&greeting);
+    println!("The length of string \"Hello\" is {}", length_greeting);
     // &greeting creates a reference to the value of string without taking the ownership
     // will not be dropped after the execution of function
 
@@ -45,7 +46,7 @@ fn main() {
     // a pointer that points to a memory that contains nothing
     // compiler in Rust ensures reference will not be dangling
     // the data will not go out of the scope before the reference does
-    let dangling_ptr = dangle_pointer();
+    let _dangling_ptr: &String = dangle_pointer();
 
     // UPCOMING: slices
 }
