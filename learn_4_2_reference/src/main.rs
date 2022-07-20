@@ -1,8 +1,7 @@
-
 /** References and Borrowing in Rust
-  * Xuhua Huang
-  * Feb 2021
-  */
+ *  Xuhua Huang
+ *  July 2022
+ */
 
 /** INTRODUCTION
   * Pass argument to function by references
