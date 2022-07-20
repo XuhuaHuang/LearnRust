@@ -13,10 +13,11 @@ use std::collections::HashMap;
 // ->
 use std::{cmp::Ordering, io};
 
-// use std::io;
+// use std::io::prelude::*;
 // use std::io::Write;
+// use std::io::BufReader
 // ->
-use std::io::{self, Write};
+use std::io::{prelude::*, Write, BufReader};
 
 // globe operator *
 // bring all public items in trait "collections"
@@ -26,6 +27,6 @@ fn main() {
     println!("Let's talk about the keyword \"use\" in Rust!");
 
     /* create a new mutable hash map and name it "map" */
-    let mut map = HashMap::new();
+    let mut map: HashMap<u8, u8> = HashMap::new();
     map.insert(1, 2);
 }
