@@ -7,6 +7,8 @@
   */
 
 fn main() {
+    #[allow(unused_variables)]
+
     // INTEGER
     // could be signed or unsigned
     // signed integer types start with "i", unsigned integer types start with "u"
@@ -22,28 +24,30 @@ fn main() {
     // FLOATING-POINT
     // f32 and f64 -> 32-bit and 64-bit respectively
     let x = 2.0; // defaulted to f64 with double precision
+    // let x: f64 = 2.0;
     let y: f32 = 3.0; // f32 with single precision
     // output
     println!("The value of a 64-bit floating point \"x\" is: {}", x); // 2.0
     println!("The value of a 32-bit floating point \"y\" is: {}", y); // 3.0
 
     // NUMERIC OPERATIONS
-    let sum = 5 + 10; // addition
-    let difference = 95.5 - 4.3; // subtraction
-    let product = 4 * 30; // multiplication
-    let quotient = 56.7 / 32.2; // division
-    let remainder = 43 % 5; //
+    let _sum = 5 + 10; // addition
+    let _difference = 95.5 - 4.3; // subtraction
+    let _product = 4 * 30; // multiplication
+    let _quotient = 56.7 / 32.2; // division
+    let _remainder = 43 % 5; //
 
     // BOOLEAN
-    let t = true;
-    let mut f: bool = false; // with explicit type annotation
-    f = true; // success with keyword "mut", as discussed in the previous notes
+    let _t: bool = true;
+    let mut _f: bool = false; // with explicit type annotation
+    _f = true; // success with keyword "mut", as discussed in the previous notes
 
     // CHARACTER
     // 4 bytes Unicode Scalar Value
     // ranged [U+0000, U+D7FF] and [U+E000 , U+10FFFF]
-    let char = 'c';
-    let first_name = "Xuhua";
+    let _c: char = 'c';
+    let _first_name: &str = "Xuhua";
+    let _last_name: String = String::from("Huang");
 
     // COMPOUND
     // group multiple values into one type
@@ -56,34 +60,39 @@ fn main() {
     println!("\nPrinting tuple \"tup\" elements x, y, z sequentially: {}, {}, {}", x, y, z);
 
     // access tuple element with "tuple_name.index" -> index the value want to access
-    let five_hundred = tup.0; // 600
-    let six_point_four = tup.1; // 6.4
-    let one = tup.2;
+    let five_hundred: i32 = tup.0; // 600
+    let six_point_four: f64 = tup.1; // 6.4
+    let one: u8 = tup.2;
     // output
     println!("\nAccessing tuple \"tup\" elements with \"tuple_name.index\": {}, {}, {}",
-    five_hundred, six_point_four, one);
+        five_hundred, six_point_four, one
+    );
 
     // ARRAY
     // element in the array must have the same type with fixed size
     // written as comma-separated list inside square brackets - [1, 2, 3]
-    let months: [&str; 12] = ["January", "February", "March", "April", "May", "June", "July",
-    "August", "September", "October", "November", "December"];
+    let _months: [&str; 12] = [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+    ];
 
     // let array_name: [data_type; array_size] = [value, value, ...];
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    let _a: [i32; 5] = [1, 2, 3, 4, 5];
     // array_name: a
     // data_type: 32-bit signed integer
     // array_size: 5
 
     // let array_name = [initial_value; size];
     // array of size provided with initial_value as elements
-    let a = [3; 5]; // [3, 3, 3, 3, 3]
+    let _a: [u8; 5] = [3; 5]; // [3, 3, 3, 3, 3]
 
     // access individual element
     // array_name[index_of_element]
-    let a: [i32; 5] = [1, 2, 3, 4, 5]; // reuse the same variable name as discussed before
-    let first_element = a[0];
-    let second_element = a[1];
+    let _a: [i32; 5] = [1, 2, 3, 4, 5]; // reuse the same variable name as discussed before
+    let _first_element: i32 = _a[0];
+    let _second_element: i32 = _a[1];
 
     // INVALID ARRAY ELEMENT ACCESS
     // et tenth_element = a[10]; // panic at run time -> index out of bounds
