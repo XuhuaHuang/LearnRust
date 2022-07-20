@@ -24,20 +24,20 @@ fn main() {
     // will not be dropped after the execution of function
 
     // MUTABLE REFERENCES
-    let mut greeting = String::from("Hello");
+    let mut greeting: String = String::from("Hello");
     change_string(&mut greeting);
     println!("The greeting string is now: {}", greeting);
 
     // NOTE: only one mutable reference to a particular variable
     // Multiple references is allowed, as long as there isn't a mutable reference in the same scope
-    let ptr1 = &mut greeting; // OK, valid mutable borrow within the main() scope
+    let ptr1: &String = &mut greeting; // OK, valid mutable borrow within the main() scope
     // let ptr2 = &mut greeting; // ERROR! Pointer is already captured with ptr1
     // println!("{}, {}", ptr1, ptr2); // ERROR!
     println!("\nWith mutable reference ptr1: {}", ptr1);
     // ptr1 is no longer valid here
 
-    let ref1 = &greeting; // OK
-    let ref2 = &greeting; // OK
+    let ref1: &String = &greeting; // OK
+    let ref2: &String = &greeting; // OK
     println!("\nWith two references ref1 and ref2: {} and {}", ref1, ref2);
     // ref1 and ref2 are no longer valid here
 
