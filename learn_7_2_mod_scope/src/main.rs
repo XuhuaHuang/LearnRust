@@ -21,5 +21,5 @@
 
 fn main() {
     println!("Let's talk about modules and control scope in Rust!");
-    pritnln!("Parent and child modules example can be found in directory \"learn_7_3_mod_restaurant\"");
+    println!("Parent and child modules example can be found in directory \"learn_7_3_mod_restaurant\"");
 }
