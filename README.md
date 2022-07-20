@@ -36,6 +36,43 @@ Heritage College, Gatineau, Quebec, Canada
 
 ---
 
+### `todo!()` Macro in Rust
+```rust
+fn main() {
+    // Display the message "Hello, world!"
+    todo!("Display the message by using the todo!() macro");
+}
+```
+
+### Classic `Hello, world` Program
+```rust
+fn main() {
+    // Our main function does one task: show a message
+    // println! displays the input "Hello, world!" to the screen
+    println!("Hello, world!");
+}
+```
+
+### Smiley Face
+```rust
+// Specify the data type "char"
+let character_1: char = 'S';
+let character_2: char = 'f';
+   
+// Compiler interprets a single item in quotations as the "char" data type
+let smiley_face = '😃';
+
+// Compiler interprets a series of items in quotations as a "str" data type and creates a "&str" reference
+let string_1 = "miley ";
+
+// Specify the data type "str" with the reference syntax "&str"
+let string_2: &str = "ace";
+
+println!("{} is a {}{}{}{}.", smiley_face, character_1, string_1, character_2, string_2);
+```
+
+---
+
 ## Commonly Used Commnads in Rust
 ```Bash
 # update rustup
