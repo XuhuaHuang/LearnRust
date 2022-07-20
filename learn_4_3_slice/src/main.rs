@@ -18,7 +18,7 @@ fn main() {
     // refer to a portion of portion
     // create slices with brackets: [starting_index, ending_index]
     // starting_index is inclusive, ending_index is exclusive
-    let mut greeting = String::from("hello world");
+    let greeting = String::from("hello world");
     let hello = &greeting[0..5]; // let hello = &greeting[..5];
     let world = &greeting[6..11]; // let world = &greeting[6..len];
 
