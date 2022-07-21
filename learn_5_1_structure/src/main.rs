@@ -32,7 +32,7 @@ fn main() {
 
     // not necessary to specify the fields in the same order declared
     // user1 is immutable without the keyword "mut"
-    let mut user1 = User {
+    let mut user1: User = User {
         user_name: String::from("user1"),
         email: String::from("xuhuahuang0412@gmail.com"),
         sign_in_count: 1,
@@ -41,12 +41,12 @@ fn main() {
 
     println!("\nChanging email field of user1");
     println!("Email address is: \"{}\" before changing", user1.email);
-    user1.email = String::from("a13710801625@outlook.com");
+    user1.email = String::from("xuhua.huang.io@outlook.com");
     println!("After changing, email of user1 is now: \"{}\"", user1.email);
 
     // Struct Update Syntax
     // creating instances from other instances with struct update syntax
-    let user2 = User {
+    let user2: User = User {
         user_name: String::from("user2"),
         email: String::from("another@email.com"),
         ..user1 // sign_in_count: user1.sign_in_count,
@@ -56,8 +56,8 @@ fn main() {
 
     // using tuple structs without named fields to create different types
     // tuple struct ignores the name of each field because they are verbose and redundant
-    let black = Color(0, 0, 0);     // Color tuple struct
-    let origin = Point(0, 0, 0);    // Point tuple struct
+    let black: Color = Color(0, 0, 0);     // Color tuple struct
+    let origin: Point = Point(0, 0, 0);    // Point tuple struct
 
     // unit-like structs without any field behave like signature of variables as its name suggests
 }
