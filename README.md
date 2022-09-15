@@ -1,5 +1,9 @@
 # LearnRust
-[![wakatime](https://wakatime.com/badge/github/XuhuaHuang/LearnRust.svg)](https://wakatime.com/badge/github/XuhuaHuang/LearnRust)  
+<!-- Link Definitions for Wakatime -->
+[Wakatime Logo Link]: https://wakatime.com/badge/user/f89598ea-6723-481b-a51b-6323e54a3c5c/project/0678f4ed-41f4-404d-bd8f-a9148c67358f.svg
+[Wakatime Info Link]: https://wakatime.com/badge/user/f89598ea-6723-481b-a51b-6323e54a3c5c/project/0678f4ed-41f4-404d-bd8f-a9148c67358f?style=flat
+[![wakatime][Wakatime Logo Link]][Wakatime Info Link]
+
 This repository is dedicated to contain code written with Cargo while self-learning coding in Rust.  
 All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project. Please use code responsibly.  
 
@@ -29,7 +33,7 @@ Heritage College, Gatineau, Quebec, Canada
 
 ## Language
 **Rust**  
-![An image for Rust](./rust.png "Red Rust Crab")
+[<img src="./rust.png" width="200" An image for Rust />](./rust.png "Red Rust Crab")
 > The Rust Programming Language: https://doc.rust-lang.org/book/title-page.html  
 > Rust by Example: https://doc.rust-lang.org/rust-by-example/  
 > The Cargo Book: https://doc.rust-lang.org/cargo/index.html
