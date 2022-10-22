@@ -23,6 +23,6 @@ fn main() {
 
     /* chained conversion from &i32 to * mut i32 - borrowed immutable reference to mutable pointer */
     let index: i32 = 42; // shadowing previous declared variable under the same name
-    let mutable_ptr_idx = index as *const i32 as *mut i32;
+    let mutable_ptr_idx: *mut i32 = index as *const i32 as *mut i32;
     println!("mutable_ptr_idx = {:#?}", mutable_ptr_idx);
 }
