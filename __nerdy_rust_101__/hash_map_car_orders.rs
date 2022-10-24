@@ -75,7 +75,7 @@ fn main() {
     // Car order #2: Used, Convertible
     order = order + 1;
     car = car_factory(order, 2000);
-    println!("{}: {:?}, Hard top = {}, {:?}, {}, {} miles", order, car.age.0, car.roof, car.motor, car.color, car.age.1);    
+    println!("{}: {:?}, Hard top = {}, {:?}, {}, {} miles", order, car.age.0, car.roof, car.motor, car.color, car.age.1);
 
     // Car order #3: New, Hard top
     order = order + 1;
