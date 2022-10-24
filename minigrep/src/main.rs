@@ -32,8 +32,9 @@ fn main() {
      */
 
     /* saving the arguemtn values in variables */
-    let query = &args[1];
-    let file_path = &args[2];
+    // args[0] is `target\debug\minigrep.exe`
+    let query: &String = &args[1];
+    let file_path: &String = &args[2];
 
     println!("Searching for {:#?}", query);
     println!("In file {:#?}", file_path);
