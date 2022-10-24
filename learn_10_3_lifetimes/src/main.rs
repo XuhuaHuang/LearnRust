@@ -11,6 +11,7 @@
  */
 
 mod lib;
+
 use learn_10_3_lifetimes::{
     first_word,
     longest_with_an_announcement,
@@ -90,23 +91,23 @@ impl<'a> ImportantExcerpt<'a> {
 fn demonstrate_lifetime_structs() {
     let novel: String = String::from("Call me Ismael. Some years ago...");
     let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-    let i = ImportantExcerpt {
+    let i: ImportantExcerpt = ImportantExcerpt {
         part: first_sentence,
     };
 }
 
 fn demonstrate_lifetime_strings() {
-    let my_string = String::from("hello world");
+    let my_string: String = String::from("hello world");
 
     // first_word works on slices of `String`s
-    let word = first_word(&my_string[..]);
+    let word: &str = first_word(&my_string[..]);
 
-    let my_string_literal = "hello world";
+    let my_string_literal: &str = "hello world";
 
     // first_word works on slices of string literals
-    let word = first_word(&my_string_literal[..]);
+    let word: &str = first_word(&my_string_literal[..]);
 
     // Because string literals *are* string slices already,
     // this works too, without the slice syntax!
-    let word = first_word(my_string_literal);
+    let word: &str = first_word(my_string_literal);
 }

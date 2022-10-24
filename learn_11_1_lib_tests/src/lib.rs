@@ -9,7 +9,7 @@
 mod tests {
     #[test]
     fn it_works() {
-        let result = 2 + 2;
+        let result: u8 = 2 + 2;
         assert_eq!(result, 4);
     }
 
@@ -65,11 +65,11 @@ mod rectangle_tests {
 
     #[test]
     fn larger_can_hold_smaller() {
-        let larger = Rectangle {
+        let larger: Rectangle = Rectangle {
             width: 8,
             height: 7,
         };
-        let smaller = Rectangle {
+        let smaller: Rectangle = Rectangle {
             width: 6, 
             height: 5,
         };
@@ -78,7 +78,7 @@ mod rectangle_tests {
 
     #[test]
     fn area_correct() {
-        let test = Rectangle {
+        let test: Rectangle = Rectangle {
             width: 4,
             height: 5,
         };
