@@ -88,7 +88,7 @@ mod rectangle_tests {
     /* Syntax for custom failure message */
     #[test]
     fn square_correct() {
-        let test = Rectangle {
+        let test: Rectangle = Rectangle {
             width: 9,
             height: 9
         };

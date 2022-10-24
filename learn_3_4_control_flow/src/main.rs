@@ -36,8 +36,8 @@ fn main() {
 
 
     // USING IF in LET STATEMENTS
-    let condition = true;
-    let some_num = if condition { 5 } else { 6 }; // using an expression instead of a statement
+    let condition: bool = true;
+    let some_num: u8 = if condition { 5 } else { 6 }; // using an expression instead of a statement
     println!("Variable \"some_num\" is now: {}", some_num); // 5
     // NOTE: if using if with expression in let statement, same type of expression is expected
     // usually expected the same type as the data type in if
@@ -50,7 +50,7 @@ fn main() {
     //     // code to loop
     // }
     // RETURN IN LOOPS
-    let mut counter = 0;
+    let mut counter: i32 = 0;
     let result = loop {
         counter += 1; // increment
 
