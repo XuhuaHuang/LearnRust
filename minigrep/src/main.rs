@@ -12,6 +12,7 @@
 
 
 use std::env;
+use std::fs;
 
 fn main() {
 
@@ -38,4 +39,12 @@ fn main() {
 
     println!("Searching for {:#?}", query);
     println!("In file {:#?}", file_path);
+
+    // std::fs::read_to_string returns std::io::Result<String, Error>
+    // if an error is thrown, msg parsed to .expect() will print to terminal
+    let contents: String = fs::read_to_string(file_path)
+        .expect("Should have been able to read the file");
+
+    println!("With text:\n{contents}");
+
 }
