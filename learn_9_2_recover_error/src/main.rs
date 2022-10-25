@@ -13,19 +13,17 @@
  */
 
 use std::fs::File;
-use std::io::ErrorKind;
-use std::io;
-use std::io::Read;
+use std::io::{self, ErrorKind, Read};
 
 fn main() {
     println!("Let's talk about recoverable errors in Rust!");
 
     // attempt to open an nonexisting file
-    let file: Result<File, E> = File::open("hello.txt"); // this line compiles
+    let file: Result<File, io::Error> = File::open("hello.txt"); // this line compiles
     // let f:u32 = File::open("hello.txt"); // this line gives a type error
 
-    /* About File::open("__path__") */
-    // Return type: Result<T, E>
+    /* About File::open(path: "") */
+    // Return type: Result<T, Error>
     // T - generic success value, std::fs::File, file handler
     // E - error value, std::io::Error
 
@@ -39,11 +37,11 @@ fn main() {
     */ // commented out since file borrowed after
 
     /* Matching on Different Errors */
-    let f = match file {
-        Ok(file) => file, // return file handle
+    let f: Result<File, io::Error> = match file {
+        Ok(file) => Ok(file), // return file handle
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::create("hello.txt") {
-                Ok(fc) => fc,
+                Ok(fc) => Ok(fc),
                 Err(e) => panic!("Problem creating the file: {:#?}", e),
             },
             other_error => {
@@ -52,9 +50,17 @@ fn main() {
         }, // end handling error
     }; // end matching
 
+    let mut file_content: String = String::new();
+
+    match f.expect("Failed to read from file hello.txt").read_to_string(&mut file_content) {
+        Ok(_) => Ok(()),
+        Err(e) => Err(e),
+    };
+    println!("Content from hello.txt: {:#?}", file_content);
+
     /* Shortcuts for Panic on Error: unwrap and expect */
-    let f = File::open("hello.txt").unwrap();
-    let f = File::open("hello.txt").expect("Failed to open hello.txt");
+    let _f: File = File::open("hello.txt").unwrap();
+    let _f: File = File::open("hello.txt").expect("Failed to open hello.txt");
     // expect() takes parameter as customized error message
 
     /* Propagating Errors */
@@ -65,19 +71,19 @@ fn main() {
 // T has been filled with type String
 // E has been filled with type io::Error
 fn read_username_from_file() -> Result<String, io::Error> {
-    let f = File::open("user_name.txt");
+    let username_file_result: Result<File, io::Error> = File::open("username.txt");
 
-    let mut f = match f {
-        Ok(file) => file,
-        Err(e) => return Err(r),
+    let username_file: Result<File, io::Error> = match username_file_result {
+        Ok(file) => Ok(file),
+        Err(e) => return Err(e),
     };
 
-    let mut s: String = String::new();
+    let mut username: String = String::new();
 
     // call 'read_to_string()' method on the file handle
     // read content into String 's' Hint: mutable reference/pointer
-    match f.read_to_string(&mut s) {
-        Ok(_) => Ok(s),
+    match username_file?.read_to_string(&mut username) {
+        Ok(_) => Ok(username),
         Err(e) => Err(e),
     }
 }
@@ -88,11 +94,11 @@ fn read_username_from_file() -> Result<String, io::Error> {
 // returns the value inside an Ok to the calling variable
 // if an error occurs, ? operator returns early and give any occur Err
 fn read_username_from_file_short() -> Result<String, io::Error> {
-    let mut f = File::open("hello.txt")?;
-    let mut s = String::new();
-    f.read_to_string(&mut s)?;
-    Ok(s)
+    let mut username_file: File = File::open("username.txt")?;
+    let mut username: String = String::new();
+    username_file.read_to_string(&mut username)?;
+    Ok(username)
 
     // equivalent to:
-    // File::open("username.txt")?.read_to_string(&mut s)?;
+    // File::open("username.txt")?.read_to_string(&mut username)?;
 }
