@@ -4,14 +4,14 @@
  */
 
 /** INTRODUCTION
-  * Pass argument to function by references
-  * instead of let function take ownership and return
-  *
-  * Referencing: &
-  * Dereferencing: *
-  * At any given time, there could be either one mutable reference or multiple immutable ones
-  * References must be always valid
-  */
+ * Pass argument to function by references
+ * instead of let function take ownership and return
+ *
+ * Referencing: &
+ * Dereferencing: *
+ * At any given time, there could be either one mutable reference or multiple immutable ones
+ * References must be always valid
+ */
 
 fn main() {
     println!("Hello, world!");
