@@ -7,6 +7,10 @@
  * $ cargo run -- test sample.txt
  * Running `target\debug\minigrep.exe test sample.txt`
  * 
+ * For content on how to read from a file, check out:
+ * learn_9_2_recover_error\src\main.rs
+ * 
+ * Xuhua Huang
  * October 24, 2022
  */
 
