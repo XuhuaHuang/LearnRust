@@ -1,14 +1,14 @@
 /** 10_1_generic_data_types.rs
-* Define functions, structs, enums and methods using generics
-* Discuss how generics affect code performance
-* `Template` in C++
-*
-* Rust compiles generic code into code that specifies the type in each instance
-* programmers pay no runtime cost for using generics -> extremely efficient at runtime
-*
-* Xuhua Huang
-* Created: July 24, 2021
-* Last updated: July 31, 2021
+ * Define functions, structs, enums and methods using generics
+ * Discuss how generics affect code performance
+ * `Template` in C++
+ *
+ * Rust compiles generic code into code that specifies the type in each instance
+ * programmers pay no runtime cost for using generics -> extremely efficient at runtime
+ *
+ * Xuhua Huang
+ * Created: July 24, 2021
+ * Last updated: July 31, 2021
  */
 
 /**
@@ -51,17 +51,15 @@ fn largest_char(list: &[char]) -> char {
  * Function that uses  generic typing with parameter T
  * does not compile as of now, commented out line 51 - 59
  */
-/*
-fn largest<T>(list: &[T]) -> T {
-    let mut largest = list[0];
-    for &item in list {
-        if item > largest {
-            largest = item;
-        }
-    }
-    largest
-}
-*/
+// fn largest<T>(list: &[T]) -> T {
+//     let mut largest = list[0];
+//     for &item in list {
+//         if item > largest {
+//             largest = item;
+//         }
+//     }
+//     largest
+// }
 
 /* Generic typing in public struct */
 #[derive(Debug)]
@@ -75,7 +73,8 @@ struct Point<T> {
 enum Result<T, E> {
     Ok(T),
     // operation succeeded, return a value of SOME type
-    Err(E),     // operation failed, return an error of SOME type E
+    Err(E),
+    // operation failed, return an error of SOME type E
 }
 
 impl<T> Point<T> {
@@ -114,9 +113,9 @@ fn main() {
     let result: char = largest_char(&char_list);
     println!("The largest character in the list is: {}", result);
 
-    // using public struct  Point
-    let integer = Point { x: 5, y: 10 };
-    let float = Point { x: 1.0, y: 4.0 };
+    // using public struct Point
+    let integer: Point<i32> = Point { x: 5, y: 10 };
+    let float: Point<f64> = Point { x: 1.0, y: 4.0 };
     println!("Point created with integer is {:#?}", integer);
     println!("Point created with float is {:#?}", float);
     // *note: just like in C++, x and y have to share the same type 'T' unless otherwise specified
@@ -124,7 +123,7 @@ fn main() {
     // for example, struct Point<Int, Flt> { x: Int, y: Flt, }
 
     // using struct `Point` implementation block
-    let point_demo = Point { x: 5, y: 10 };
+    let point_demo: Point<i32> = Point { x: 5, y: 10 };
     println!("\nPrinting struct `Point` object `point_demo`
     point_demo.x = {}
     point_demo.y = {}",
@@ -132,7 +131,7 @@ fn main() {
              point_demo.y()
     );
 
-    let point_f32 = Point { x: 5.5, y: 11.0 };
+    let point_f32: Point<f32> = Point { x: 5.5, y: 11.0 };
     println!("\nPrinting distance from origin for `point_32`
     distance from origin: {}",
     point_f32.distance_from_origin());
