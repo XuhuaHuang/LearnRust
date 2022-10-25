@@ -14,6 +14,7 @@ pub struct Guess {
 
 impl Guess {
     // Guess::new()
+    // function declared without the &self indicates it is a static function
     pub fn new(value: i32) -> Guess {
         // test incoming value
         // throw a panic! if the test failed
@@ -51,7 +52,6 @@ fn main() {
     /* Creating Custom Types for Validation */
     // example code:
     loop {
-        // --snip--
 
         let guess: i32 = match guess.trim().parse() {
             Ok(num) => num,
@@ -64,7 +64,6 @@ fn main() {
         }
 
         match guess.cmp(&secret_number) {
-            // --snip--
             Ordering::Less => { println!("Less than"); }
             Ordering::Equal => { println!("Equal"); }
             Ordering::Greater => { println!("Greater"); }
