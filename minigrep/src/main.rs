@@ -1,5 +1,5 @@
 /**
- * Project: mini globally search a regular expression and print (grep) rpogram
+ * Project: mini globally search a regular expression and print (grep) program
  * 
  * To execute the project:
  * $ cd .\minigrep\
@@ -16,7 +16,7 @@ use std::env;
 fn main() {
 
     // use function std::env::args() to read the arguments parsed to main
-    // similiar to int main(int argc, char** argv) in C++
+    // similar to int main(int argc, char** argv) in C++
     // .collect() returns the iterator to such produced series
     let args: Vec<String> = env::args().collect();
     // print the result with the "debug" macro
@@ -31,7 +31,7 @@ fn main() {
      * $ cargo run -- arg1 arg2
      */
 
-    /* saving the arguemtn values in variables */
+    /* saving the argument values in variables */
     // args[0] is `target\debug\minigrep.exe`
     let query: &String = &args[1];
     let file_path: &String = &args[2];
