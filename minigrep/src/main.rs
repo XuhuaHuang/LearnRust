@@ -65,4 +65,62 @@ fn main() {
 
     println!("With text:\n{contents}");
 
+    // reminder: Config::build returns a Result<Config, &'static str> enum
+    // if it returns a Config, it will be un-wrapped
+    // else the lambda performs; in this case, print the error message and exit the program.
+    // |err: &str| -> Config specifies this is a lambda/closure.
+    let config: Config = Config::build(&args).unwrap_or_else(|err: &str| -> Config {
+        // log::error!
+        error!("Problem parsing arguments: {err}");
+        process::exit(1);
+    });
+
+    // log::debug!
+    debug!("config.query: {:#?}", config.query);
+    debug!("config.file_path: {:#?}", config.file_path);
+
+}
+
+/* Group configuration values using a struct */
+struct Config {
+    query: String,
+    file_path: String,
+}
+
+/* Create a factory constructor for struct Config */
+impl Config {
+    // previous constructor declaration
+    // fn new(args: &[String]) -> Config {
+    fn build(args: &[String]) -> Result<Config, &'static str> {
+        // determine the number of arguments passed from CLI
+        // one of valid approaches is to panic when argument count is less than 3
+        // if args.len() < 3 {
+        //     panic!("not enough arguments");
+        // }
+        // the better approach would be to return a Result<T, E> struct
+        if args.len() < 3 {
+            return Err("not enough arguments");
+        }
+
+        let query: String = args[1].clone();
+        let file_path: String = args[2].clone();
+
+        Ok(Config { query, file_path })
+    }
+}
+
+fn parse_config(args: &[String]) -> Config {
+    // using .clone() has a higher runtime cost
+    // but it remains affordable for what the code is doing now
+    let query: String = args[1].clone();
+    let file_path: String = args[2].clone();
+
+    Config { query, file_path }
+}
+
+fn run(config: Config) {
+    let contents: String = fs::read_to_string(config.file_path)
+        .expect("Should have been able to read the file");
+
+    println!("With text:\n{contents}");
 }
