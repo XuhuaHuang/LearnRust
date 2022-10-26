@@ -28,11 +28,13 @@ fn main() {
     println!("Let's talk about ownership in Rust!");
 
     // the "String" type
-    let greeting = "Hello"; // string literals stored on the stack, immutable, fixed size
+    let greeting: &str = "Hello"; // string literals stored on the stack, immutable, fixed size
     // string literals are hardcoded directly to the final executable
+    println!("greeting: &str = {:#?}", greeting);
 
     // convert to "String" data type and allocate it to the heap
     let mut greeting = String::from("Hello");
+    // let mut greeting: String = "Hello".to_string();
     greeting.push_str(", world!"); // append to string
 
     // output
@@ -42,15 +44,15 @@ fn main() {
     // String contains three parts, all on stack
     // pointer, points to the actual value on the heap; length, the memory currently used
     // capacity, the amount of memory received from the allocator
-    let ptr1 = String::from("Hello");
-    let ptr2 = ptr1; // only copy pointer, length and capacity on the stack to new String
+    let ptr1: String = String::from("Hello");
+    let ptr2: String = ptr1; // only copy pointer, length and capacity on the stack to new String
     // ptr1 and ptr2 now both contain the same address pointing to the memory contains "hello"
     // ptr1 is no longer a valid variable, it is "moved" to ptr2
     // since ptr1 is not valid, drop() will only get called when ptr2 goes out of the scope
 
 
     // CLONE
-    let ptr3 = ptr2.clone();
+    let ptr3: String = ptr2.clone();
     // both ptr2 and ptr3 are valid
     // occupying different space ont he heap
     println!("\nptr1 is destroyed");
@@ -65,7 +67,7 @@ fn main() {
 
 
     // Return Value and Ownership
-    let ptr3 = give_ownership(); // overwrite with function String content
+    let ptr3: String = give_ownership(); // overwrite with function String content
     let (ptr3, length) = calculate_string_length(ptr3);
     // (ptr3, length) is a tuple of type (String, i32)
 
