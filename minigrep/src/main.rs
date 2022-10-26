@@ -16,10 +16,21 @@
  */
 
 
-use std::env;
-use std::fs;
+// #[macro_use]
+// extern crate log;
+use env_logger::Env;
+use log::{debug, error, info};
+// use log::{debug, error, log_enabled, info, Level};
+use std::{env, fs, process};
 
 fn main() {
+
+    /* Initialize logger */
+    let env: env_logger::Env = Env::default()
+        .filter_or("MY_LOG_LEVEL", "trace")
+        .write_style_or("MY_LOG_STYLE", "always");
+    env_logger::init_from_env(env);
+    // env_logger::init();
 
     // use function std::env::args() to read the arguments parsed to main
     // similar to int main(int argc, char** argv) in C++
