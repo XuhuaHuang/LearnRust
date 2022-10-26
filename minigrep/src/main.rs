@@ -53,8 +53,10 @@ fn main() {
     let query: &String = &args[1];
     let file_path: &String = &args[2];
 
-    println!("Searching for {:#?}", query);
-    println!("In file {:#?}", file_path);
+    // log::info!
+    info!("Executable {:#?}", args[0]);
+    info!("Searching for {:#?}", query);
+    info!("In file {:#?}", file_path);
 
     // std::fs::read_to_string returns std::io::Result<String, Error>
     // if an error is thrown, msg parsed to .expect() will print to terminal
