@@ -1,11 +1,12 @@
 /**
  * Project: mini globally search a regular expression and print (grep) program
+ * https://github.com/env-logger-rs/env_logger/blob/main/examples/default.rs
  * 
  * To execute the project:
  * $ cd .\minigrep\
  * $ cargo build
- * $ cargo run -- test sample.txt
- * Running `target\debug\minigrep.exe test sample.txt`
+ * $ cargo run -- test poem.txt
+ * Running `target\debug\minigrep.exe test poem.txt`
  * 
  * For content on how to read from a file, check out:
  * learn_9_2_recover_error\src\main.rs
