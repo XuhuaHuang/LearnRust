@@ -1,3 +1,5 @@
+use std::thread;
+use std::time::Duration;
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum ShirtColor {
@@ -45,21 +47,49 @@ impl Inventory {
 }
 
 fn main() {
-    let store = Inventory {
+    let store: Inventory = Inventory {
         shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
     };
 
-    let user_pref1 = Some(ShirtColor::Red);
+    let user_pref1: Option<ShirtColor> = Some(ShirtColor::Red);
     let giveaway1: ShirtColor = store.giveaway(user_pref1);
     println!(
         "The user with preference {:?} gets {:?}",
         user_pref1, giveaway1
     );
 
-    let user_pref2 = None;
+    let user_pref2: Option<ShirtColor> = None;
     let giveaway2: ShirtColor = store.giveaway(user_pref2);
     println!(
         "The user with preference {:?} gets {:?}",
         user_pref2, giveaway2
     );
+
+    let expensive_closure = |num: u32| -> u32 {
+        println!("calculating slowly...");
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+    expensive_closure(1u32);
+
+    /* capturing references or moving ownership */
+    // https://doc.rust-lang.org/book/ch13-01-closures.html#capturing-references-or-moving-ownership
+    // A closure body can do any of the following:
+    // move a captured value out of the closure, mutate the captured value, neither move nor mutate the value
+    // or capture nothing from the environment to begin with.
+    let list: Vec<u8> = vec![1, 2, 3];
+    println!("Before defining only_borrows closure: {:?}", list);
+
+    let only_borrows = || println!("From closure: {:?}", list);
+
+    println!("Before calling only_borrows closure: {:?}", list);
+    only_borrows();
+    println!("After calling only_borrows closure: {:?}", list);
+
+    // using variable shadowing to create a mutable variant of the list in question
+    let mut list: Vec<u8> = vec![4, 5, 6];
+    println!("Before defining borrows_mutably closure: {:?}", list);
+    let mut borrows_mutably = || list.push(7);
+    borrows_mutably();
+    println!("After calling borrows_mutably closure: {:?}", list);
 }
