@@ -32,7 +32,7 @@ fn main() {
     );
 
     // create an instance of struct 'Rectangle'
-    let rect = Rectangle {
+    let rect: Rectangle = Rectangle {
         width: 50,
         height: 70,
     }; // keep in mind, let is ultimately a statement with ending semicolons

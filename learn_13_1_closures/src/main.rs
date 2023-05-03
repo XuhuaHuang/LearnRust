@@ -105,6 +105,7 @@ fn main() {
         Rectangle { width: 7, height: 12 },
     ];
 
-    list.sort_by_key(|r| r.width);
+    list.sort_by_key(|r: &Rectangle| r.width);
+    list.sort_by_key(|r: &Rectangle| r.height);
     println!("{:#?}", list);
 }
