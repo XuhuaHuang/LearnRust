@@ -1,9 +1,11 @@
+#![allow(unused)]
+
 /** 6_4_if_let_control.rs
-  * Concise Control Flow wit 'if let' Operator in Rust
-  *
-  * Xuhua Huang
-  * March 2021
-  */
+ * Concise Control Flow wit 'if let' Operator in Rust
+ *
+ * Xuhua Huang
+ * March 2021
+ */
 
 // Coin enum and UsState from '6_2_match_operator.rs'
 #[derive(Debug)]
@@ -12,7 +14,7 @@ enum Coin {
     Nickel,
     Dime,
     Quarter(UsState), // designs of 50 states pattern on one side
-    // a Quarter variant also holds a 'UsState' value
+                      // a Quarter variant also holds a 'UsState' value
 }
 
 #[derive(Debug)]
@@ -49,9 +51,9 @@ fn main() {
 
     // include an 'else' with 'if let'
     // 'else' acts like the '_' placeholder
-    let mut count:u8 = 0;
+    let mut count: u8 = 0;
     // with 'match'
-    let coin = Coin::Penny;
+    let coin: Coin = Coin::Penny;
     match coin {
         Coin::Quarter(state) => println!("State quarter from {:?}", state),
         _ => count += 1,
@@ -59,10 +61,11 @@ fn main() {
 
     // with 'if let {} else {}'
     let coin = Coin::Quarter(Alaska); // uncomment this line if you want to see 'if let' executes
-    // let coin = Coin::Penny;
+                                      // let coin = Coin::Penny;
     if let Coin::Quarter(state) = coin {
         println!("State quarter from {:?}", state);
-    } else { // if coin is NOT one of the Quarters with UsState
+    } else {
+        // if coin is NOT one of the Quarters with UsState
         count += 1;
     }
 
@@ -72,5 +75,8 @@ fn main() {
     let coin_dime: Coin = Coin::Dime;
     println!("Dime: {:?}", coin_dime);
 
-    println!("Times the operator did NOT find an exact execution arm: {}", count);
+    println!(
+        "Times the operator did NOT find an exact execution arm: {}",
+        count
+    );
 }
