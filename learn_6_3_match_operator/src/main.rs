@@ -1,18 +1,18 @@
 /** 6_3_match_operator.rs
-  * The match Control Flow Operator in Rust
-  * a.k.a match expression
-  *
-  * Xuhua Huang
-  * March 2021
-  */
+ * The match Control Flow Operator in Rust
+ * a.k.a match expression
+ *
+ * Xuhua Huang
+ * March 2021
+ */
 
 /**
-  * match
-  * compare a value against a series of patterns
-  * execute code based on pattern matches
-  * think of it as a coin-sorting machine
-  * has to find a fit
-  */
+ * match
+ * compare a value against a series of patterns
+ * execute code based on pattern matches
+ * think of it as a coin-sorting machine
+ * has to find a fit
+ */
 
 // since we mentioned coins
 enum Coin {
@@ -20,7 +20,7 @@ enum Coin {
     Nickel,
     Dime,
     Quarter(UsState), // designs of 50 states pattern on one side
-    // a Quarter variant also holds a 'UsState' value
+                      // a Quarter variant also holds a 'UsState' value
 }
 
 #[derive(Debug)]
@@ -42,7 +42,8 @@ fn value_in_cents(coin: Coin) -> u8 {
         // Coin::Penny is the value
         // => operator separates the pattern and code to run (1 as an return expression)
         // if need to run multiple lines of code, {} are needed
-        Coin::Penny => { // start of code block to run
+        Coin::Penny => {
+            // start of code block to run
             println!("Lucky quarter!"); // code to run
             1 // return expression
         } // end code block to run for Coin::Penny
@@ -52,7 +53,7 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter(UsState) => {
             println!("State quarter from: {:?}!", UsState);
             25
-        }, // a quarter coin has to have one state minted
+        } // a quarter coin has to have one state minted
     } // end of match expression
 }
 
@@ -73,7 +74,7 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
 // implement the '_' place holder
 // takes ownership of an unsigned 8-bit integer
 // returns a String
-fn descriptive_u8(x:u8) -> String {
+fn descriptive_u8(x: u8) -> String {
     match x {
         // suppose wo only care about 1, 3, 5, 7, 9
         1 => String::from("one"),
@@ -102,12 +103,18 @@ fn main() {
     let six = plus_one(five); // == plus_one(Some(5));
     println!("The result after calling with argument 5 is: {:#?}", six);
     let none = plus_one(None);
-    println!("The result after calling with argument None is: {:#?}", none);
+    println!(
+        "The result after calling with argument None is: {:#?}",
+        none
+    );
 
     // test case with function descriptive_u8()
     println!("\nTesting function \"descriptive_u8(x:u8) -> String\":");
     for i in 1..10 {
-        println!("The returned description of the function is: {}", descriptive_u8(i));
+        println!(
+            "The returned description of the function is: {}",
+            descriptive_u8(i)
+        );
     }
 
     // UPCOMING: if let, when only care about one of the cases
