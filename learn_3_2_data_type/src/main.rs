@@ -1,14 +1,14 @@
+#[allow(unused_variables)]
+
 /** Data Types in Rust
-  * two data type subsets
-  * scalar and compound
-  *
-  * Xuhua Huang
-  * Feb 2021
-  */
+ * two data type subsets
+ * scalar and compound
+ *
+ * Xuhua Huang
+ * Feb 2021
+ */
 
 fn main() {
-    #[allow(unused_variables)]
-
     // INTEGER
     // could be signed or unsigned
     // signed integer types start with "i", unsigned integer types start with "u"
@@ -19,7 +19,10 @@ fn main() {
     // unsigned 8-bit integer
     // will overflow outside of [0,255] inclusive
     let int1: u8 = 255;
-    println!("The value of an unsigned 8-bit integer \"int1\" is: {}", int1);
+    println!(
+        "The value of an unsigned 8-bit integer \"int1\" is: {}",
+        int1
+    );
 
     // FLOATING-POINT
     // f32 and f64 -> 32-bit and 64-bit respectively
@@ -56,15 +59,18 @@ fn main() {
     let tup: (i32, f64, u8) = (500, 6.4, 1);
     // tup is a tuple with 32-bit signed integer, 64-bit floating point, 8-bit unsigned integer
     let (x, y, z) = tup; // tie three variables to tuple tup, automatically linked
-    // output
-    println!("\nPrinting tuple \"tup\" elements x, y, z sequentially: {}, {}, {}", x, y, z);
+    println!(
+        "\nPrinting tuple \"tup\" elements x, y, z sequentially: {}, {}, {}",
+        x, y, z
+    );
 
     // access tuple element with "tuple_name.index" -> index the value want to access
     let five_hundred: i32 = tup.0; // 600
     let six_point_four: f64 = tup.1; // 6.4
     let one: u8 = tup.2;
     // output
-    println!("\nAccessing tuple \"tup\" elements with \"tuple_name.index\": {}, {}, {}",
+    println!(
+        "\nAccessing tuple \"tup\" elements with \"tuple_name.index\": {}, {}, {}",
         five_hundred, six_point_four, one
     );
 
@@ -72,10 +78,18 @@ fn main() {
     // element in the array must have the same type with fixed size
     // written as comma-separated list inside square brackets - [1, 2, 3]
     let _months: [&str; 12] = [
-        "January", "February", "March",
-        "April", "May", "June",
-        "July", "August", "September",
-        "October", "November", "December"
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
     ];
 
     // let array_name: [data_type; array_size] = [value, value, ...];
@@ -97,6 +111,14 @@ fn main() {
     // INVALID ARRAY ELEMENT ACCESS
     // et tenth_element = a[10]; // panic at run time -> index out of bounds
     // println!("The tenth element is: {}", tenth_element); // ERROR!
+
+    println!("Max u32: {}", u32::MAX);
+    println!("Max u64: {}", u64::MAX);
+    println!("Max usize: {}", usize::MAX);
+    println!("Max u128: {}", u128::MAX);
+
+    println!("Max f32: {}", f32::MAX);
+    // println!("Max f64: {}", f64::MAX);
 
     // UPCOMING - functions
 }
