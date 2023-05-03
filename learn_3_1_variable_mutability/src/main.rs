@@ -9,11 +9,11 @@ fn main() {
     // mutable means the value of this variable can be overwritten
     // variable without the mut keyword could be understood as static
     // prefix with an underscore to avoid warning of unused variable
-    let mut x = 5;
+    let mut x: i32 = 5;
     println!("The value of x is: {}", x);
 
     // create another variable named "y" without keyword "mut"
-    let y = 6;
+    let y: i32 = 6;
 
     // attempt to change the value of both x and y
     // changing the value of an immutable y will cause an error
@@ -30,10 +30,10 @@ fn main() {
     // newer value of the variable appears when it is used
     println!("Variable \"y\" is being shadowed");
 
-    let y = y + 1;
+    let y: i32 = y + 1;
     println!("The value of y is: {}", y); // 7
 
-    let y = y * 2;
+    let y: i32 = y * 2;
     println!("The value of y is: {}", y); // 14
 
     // ADVANTAGE of shadowing

@@ -10,6 +10,7 @@ target
 .vscode/
 *.code-workspace
 .vs/
+.run/
 
 *~
 *.autosave

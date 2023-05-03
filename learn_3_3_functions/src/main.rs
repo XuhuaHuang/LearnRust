@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /** Functions in Rust
   * Xuhua Huang
   * Feb 2021

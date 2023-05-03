@@ -17,7 +17,7 @@ struct Inventory {
 ///
 /// ```
 /// let store = Inventory {
-/// shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
+///     shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
 /// };
 /// let user_pref1 = Some(ShirtColor::Red);
 /// let gave_away: ShirtColor = store.giveaway(user_pref1);
