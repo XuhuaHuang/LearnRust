@@ -99,10 +99,19 @@ fn main() {
     borrows_mutably();
     println!("After calling borrows_mutably closure: {:?}", list);
 
-    let mut list = [
-        Rectangle { width: 10, height: 1 },
-        Rectangle { width: 3, height: 5 },
-        Rectangle { width: 7, height: 12 },
+    let mut list: [Rectangle; 3] = [
+        Rectangle {
+            width: 10,
+            height: 1,
+        },
+        Rectangle {
+            width: 3,
+            height: 5,
+        },
+        Rectangle {
+            width: 7,
+            height: 12,
+        },
     ];
 
     list.sort_by_key(|r: &Rectangle| r.width);
