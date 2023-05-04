@@ -1,16 +1,21 @@
 # LearnRust
+
 <!-- Link Definitions for Wakatime -->
+
 [Wakatime Logo Link]: https://wakatime.com/badge/user/f89598ea-6723-481b-a51b-6323e54a3c5c/project/0678f4ed-41f4-404d-bd8f-a9148c67358f.svg
 [Wakatime Info Link]: https://wakatime.com/badge/user/f89598ea-6723-481b-a51b-6323e54a3c5c/project/0678f4ed-41f4-404d-bd8f-a9148c67358f?style=flat
+
 [![wakatime][Wakatime Logo Link]][Wakatime Info Link]
 
 This repository is dedicated to contain code written with Cargo while self-learning coding in Rust.  
-All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project. Please use code responsibly.  
+All executable projects are prefixed with `learn_`, followed by topic number `[0-9]_[0-9]_` incrementally and topic covered in the project. Please use code responsibly.
 
 ---
 
 ## Getting Started
+
 To run all project in this repository, make sure you already installed `cargo` by running the `cargo --version` in the terminal.
+
 ```Bash
 # check the version of cargo
 $ cargo --version
@@ -25,15 +30,18 @@ $ cargo run
 ---
 
 ## Special Thanks
+
 **Prof. Hussam AI-Hertani**  
 Teacher in Electronics and Information Technology program  
-Heritage College, Gatineau, Quebec, Canada  
+Heritage College, Gatineau, Quebec, Canada
 
 ---
 
 ## Language
+
 **Rust**  
 [<img src="./rust.png" width="200" An image for Rust />](./rust.png "Red Rust Crab")
+
 > The Rust Programming Language: https://doc.rust-lang.org/book/title-page.html  
 > Rust by Example: https://doc.rust-lang.org/rust-by-example/  
 > The Cargo Book: https://doc.rust-lang.org/cargo/index.html
@@ -41,6 +49,7 @@ Heritage College, Gatineau, Quebec, Canada
 ---
 
 ### `todo!()` Macro in Rust
+
 ```rust
 fn main() {
     // Display the message "Hello, world!"
@@ -49,6 +58,7 @@ fn main() {
 ```
 
 ### Classic `Hello, world` Program
+
 ```rust
 fn main() {
     // Our main function does one task: show a message
@@ -58,11 +68,12 @@ fn main() {
 ```
 
 ### Smiley Face
+
 ```rust
 // Specify the data type "char"
 let character_1: char = 'S';
 let character_2: char = 'f';
-   
+
 // Compiler interprets a single item in quotations as the "char" data type
 let smiley_face = '😃';
 
@@ -78,6 +89,7 @@ println!("{} is a {}{}{}{}.", smiley_face, character_1, string_1, character_2, s
 ---
 
 ## Commonly Used Commnads in Rust
+
 ```Bash
 # update rustup
 $ rustup self update
@@ -96,7 +108,9 @@ $ cargo -h
 ---
 
 ## Interesting Facts
+
 1. Rust manages code based on `crate` and `mod`; Think of `crate` as projects, each `crate` is a complete unit for compiling, delivering an `.exe` or `.lib` file.  
-Inside each `crate`, `mod` is placed as namespaces.
+   Inside each `crate`, `mod` is placed as namespaces.
 2. By default, the `rustc` compiler introduces dependance to the `stdlib`; In addition to that, the compiler automatically adds an `use` statement for each `crate` developed by the user: `use std::prelude::*;` for commonly used `type`, `trait`, `function` and `macro`.  
-The source code of the `prelude` module is placed in `/src/libstd/prelude/` directory.
+   The source code of the `prelude` module is placed in `/src/libstd/prelude/` directory.
+3. The line I type the most is `#![allow(unused)]`
