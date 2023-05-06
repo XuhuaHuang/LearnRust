@@ -8,7 +8,7 @@ use std::io; // input/output library
 fn main() {
     println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let secret_number: u32 = rand::thread_rng().gen_range(1, 101);
     // thread_rng() is the random number generator
     // gen_range() is the method
     // gen_range(inclusive, exclusive) - first_argument <= rand_num < second_argument
