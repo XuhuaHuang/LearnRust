@@ -1,9 +1,11 @@
+#![allow(unused)]
+
 /** 9_2_recover_error.rs
-  * Recoverable errors with Result enum
-  *
-  * Xuhua Huang
-  * May 2021
-  */
+ * Recoverable errors with Result enum
+ *
+ * Xuhua Huang
+ * May 2021
+ */
 
 /* Recall from earlier: type 'Result'
  * enum Result<T,E> {
@@ -11,7 +13,6 @@
  *     Err(E),
  * }
  */
-
 use std::fs::File;
 use std::io::{self, ErrorKind, Read};
 
@@ -34,7 +35,8 @@ fn main() {
         Err(error) => panic!("With simple 'match' statement, " +
                              "problem opening the file: {:#?}", error),
     };
-    */ // commented out since file borrowed after
+    */
+    // commented out since file borrowed after
 
     /* Matching on Different Errors */
     let f: Result<File, io::Error> = match file {
@@ -52,7 +54,10 @@ fn main() {
 
     let mut file_content: String = String::new();
 
-    match f.expect("Failed to read from file hello.txt").read_to_string(&mut file_content) {
+    let _ = match f
+        .expect("Failed to read from file hello.txt")
+        .read_to_string(&mut file_content)
+    {
         Ok(_) => Ok(()),
         Err(e) => Err(e),
     };
