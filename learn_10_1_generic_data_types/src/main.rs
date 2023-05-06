@@ -51,15 +51,18 @@ fn largest_char(list: &[char]) -> char {
  * Function that uses  generic typing with parameter T
  * does not compile as of now, commented out line 51 - 59
  */
-// fn largest<T>(list: &[T]) -> T {
-//     let mut largest = list[0];
-//     for &item in list {
-//         if item > largest {
-//             largest = item;
-//         }
-//     }
-//     largest
-// }
+fn largest<T>(list: &[T]) -> T
+where
+    T: std::cmp::PartialOrd<T> + Clone,
+{
+    let mut largest: T = list[0].clone();
+    for item in list {
+        if item > &largest {
+            largest = item.clone();
+        }
+    }
+    largest
+}
 
 /* Generic typing in public struct */
 #[derive(Debug)]
@@ -94,7 +97,6 @@ impl Point<f32> {
     }
 }
 
-
 fn main() {
     println!(); // added this python style of new line
     println!("Let's talk about generic data types in Rust!");
@@ -109,7 +111,7 @@ fn main() {
     println!("The largest number in the list is: {}", result);
 
     // using function 'largest_i32(list: &[char])'
-    let char_list:Vec<char> = vec!['y', 'm', 'c', 'a'];
+    let char_list: Vec<char> = vec!['y', 'm', 'c', 'a'];
     let result: char = largest_char(&char_list);
     println!("The largest character in the list is: {}", result);
 
@@ -124,15 +126,18 @@ fn main() {
 
     // using struct `Point` implementation block
     let point_demo: Point<i32> = Point { x: 5, y: 10 };
-    println!("\nPrinting struct `Point` object `point_demo`
+    println!(
+        "\nPrinting struct `Point` object `point_demo`
     point_demo.x = {}
     point_demo.y = {}",
-             point_demo.x(),
-             point_demo.y()
+        point_demo.x(),
+        point_demo.y()
     );
 
     let point_f32: Point<f32> = Point { x: 5.5, y: 11.0 };
-    println!("\nPrinting distance from origin for `point_32`
+    println!(
+        "\nPrinting distance from origin for `point_32`
     distance from origin: {}",
-    point_f32.distance_from_origin());
+        point_f32.distance_from_origin()
+    );
 }
