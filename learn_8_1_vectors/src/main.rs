@@ -1,14 +1,16 @@
 /** 8_1_vectors.rs
-  * Common Collections
-  *
-  * Xuhua Huang
-  * April 2021
-  */
+ * Common Collections
+ *
+ * Xuhua Huang
+ * April 2021
+ */
 
 /** vectors allow storing a variable number values next to each other
-  * string is a collection of characters
-  * hash map allows associating a value with a particular key
-  */
+ * string is a collection of characters
+ * hash map allows associating a value with a particular key
+ */
+
+#[allow(unused)]
 
 fn main() {
     println!("Let's about storing values in vectors!");
@@ -21,13 +23,19 @@ fn main() {
     v = vec![1, 2, 3];
 
     /* UPDATE A VECTOR */
-    let mut v = Vec::new();
+    let mut v: Vec<i32> = Vec::new();
     for i in 4..11 {
         v.push(i);
     }
+
     {
-        let v = vec![1,2 ,3, 4];
+        let v: Vec<u8> = vec![1, 2, 3, 4];
         // do stuff with v
+        print!("line {}: ", line!());
+        for i in v.iter() {
+            print!("{}, ", i);
+        }
+        println!();
     } // <- v goes out of scope and it is freed
 
     /* READING ELEMENTS OF VECTORS */
@@ -49,15 +57,18 @@ fn main() {
     // println!("The first element is: {}", first);
 
     /* ITERATING OVER THE VALUES IN A VECTOR */
-    println!("Print vector with immutable borrow");
+    println!("line {}: Print vector with immutable borrow", line!());
     for i in &v {
-        println!("{}", i);
+        print!("{}, ", i);
     }
-    println!("Print vector with mutable borrow and add 50 to each element beforehand");
+    println!();
+
+    println!("line {}: Print vector with mutable borrow and add 50 to each element beforehand", line!());
     for i in &mut v {
         *i += 50;
-        println!("{}", i);
+        print!("{}, ", i);
     }
+    println!();
 
     /* USING ENUMS TO STORE MULTIPLE TYPES */
     #[derive(Debug)]
@@ -67,7 +78,7 @@ fn main() {
         Text(String),
     }
 
-    let row = vec![
+    let row: Vec<SpreadsheetCell> = vec![
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Float(11.13),
         SpreadsheetCell::Text(String::from("I want to work for ORS")),
