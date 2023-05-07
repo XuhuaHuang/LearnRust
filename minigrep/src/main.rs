@@ -1,20 +1,19 @@
 /**
  * Project: mini globally search a regular expression and print (grep) program
  * https://github.com/env-logger-rs/env_logger/blob/main/examples/default.rs
- * 
+ *
  * To execute the project:
  * $ cd .\minigrep\
  * $ cargo build
  * $ cargo run -- test poem.txt
  * Running `target\debug\minigrep.exe test poem.txt`
- * 
+ *
  * For content on how to read from a file, check out:
  * learn_9_2_recover_error\src\main.rs
- * 
+ *
  * Xuhua Huang
  * October 24, 2022
  */
-
 
 // #[macro_use]
 // extern crate log;
@@ -25,7 +24,6 @@ use log::{debug, error, info};
 use std::{env, fs, process};
 
 fn main() {
-
     /* Initialize logger */
     let env: env_logger::Env = Env::default()
         .filter_or("MY_LOG_LEVEL", "trace")
@@ -61,8 +59,8 @@ fn main() {
 
     // std::fs::read_to_string returns std::io::Result<String, Error>
     // if an error is thrown, msg parsed to .expect() will print to terminal
-    let contents: String = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
+    let contents: String =
+        fs::read_to_string(file_path).expect("Should have been able to read the file");
 
     println!("With text:\n{contents}");
 
@@ -91,8 +89,8 @@ fn parse_config(args: &[String]) -> Config {
 }
 
 fn run(config: Config) {
-    let contents: String = fs::read_to_string(config.file_path)
-        .expect("Should have been able to read the file");
+    let contents: String =
+        fs::read_to_string(config.file_path).expect("Should have been able to read the file");
 
     println!("With text:\n{contents}");
 }
