@@ -1,5 +1,5 @@
 /* $ cargo run -- frog poem.txt */
-/* cargo run -- body poem.txt */
+/* $ cargo run -- body poem.txt */
 
 use std::error::Error;
 use std::fs;
@@ -30,6 +30,22 @@ impl Config {
 
         Ok(Config { query, file_path })
     }
+
+    pub fn build_from_itr(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
+        args.next();
+
+        let query: String = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let file_path: String = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file path"),
+        };
+
+        Ok(Config { query, file_path })
+    }
 }
 
 #[cfg(test)]
@@ -38,8 +54,8 @@ mod tests {
 
     #[test]
     fn one_result() {
-        let query = "duct";
-        let contents = "\
+        let query: &str = "duct";
+        let contents: &str = "\
 Rust:
 safe, fast, productive.
 Pick three.";
@@ -49,7 +65,7 @@ Pick three.";
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut results = Vec::new();
+    let mut results: Vec<&str> = Vec::new();
 
     for line in contents.lines() {
         if line.contains(query) {
@@ -58,6 +74,13 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     }
 
     results
+}
+
+pub fn search_with_itr<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    contents
+        .lines()
+        .filter(|line: &&str| -> bool { line.contains(query) })
+        .collect()
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
