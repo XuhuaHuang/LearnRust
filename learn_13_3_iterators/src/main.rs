@@ -4,7 +4,7 @@ use core::slice::Iter;
 mod tests {
     #[test]
     fn iterator_demonstration() {
-        let v1 = vec![1, 2, 3];
+        let v1: Vec<i32> = vec![1, 2, 3];
 
         let mut v1_iter = v1.iter();
 
@@ -16,7 +16,7 @@ mod tests {
 
     #[test]
     fn iterator_sum() {
-        let v1 = vec![1, 2, 3];
+        let v1: Vec<i32> = vec![1, 2, 3];
 
         let v1_iter = v1.iter();
 
