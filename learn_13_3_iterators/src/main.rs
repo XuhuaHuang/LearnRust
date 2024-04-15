@@ -1,7 +1,10 @@
 use core::slice::Iter;
 
 #[cfg(test)]
+/// This module contains tests for iterators.
 mod tests {
+
+    /// Test function to demonstrate the usage of iterators.
     #[test]
     fn iterator_demonstration() {
         let v1: Vec<i32> = vec![1, 2, 3];
@@ -14,6 +17,7 @@ mod tests {
         assert_eq!(v1_iter.next(), None);
     }
 
+    /// Test function to calculate the sum of elements using iterators.
     #[test]
     fn iterator_sum() {
         let v1: Vec<i32> = vec![1, 2, 3];
