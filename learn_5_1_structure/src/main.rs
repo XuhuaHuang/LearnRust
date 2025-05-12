@@ -34,7 +34,7 @@ fn main() {
     // user1 is immutable without the keyword "mut"
     let mut user1: User = User {
         user_name: String::from("user1"),
-        email: String::from("xuhuahuang0412@gmail.com"),
+        email: String::from("one@email.com"),
         sign_in_count: 1,
         active: true,
     }; // end user1

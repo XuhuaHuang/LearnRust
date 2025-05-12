@@ -7,7 +7,8 @@
 target
 *.lock
 .idea/
-.vscode/
+!.vscode/launch.json
+!.vscode/tasks.json
 *.code-workspace
 .vs/
 .run/

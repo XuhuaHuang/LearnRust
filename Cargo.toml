@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "learn_1_1_hello_world",
+    "learn_1_2_hello_rust",
+    "minigrep",
+    "src/linalg_basics",
+]

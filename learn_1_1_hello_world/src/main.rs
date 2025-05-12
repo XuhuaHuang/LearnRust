@@ -1,6 +1,6 @@
 /**
  * @file main.rs
- * @author Xuhua Huang (xuhuahuang0412@gmail.com)
+ * @author Xuhua Huang
  * @brief The classic "Hello, world" program in Rust
  * prints greeting in the console
  * 
