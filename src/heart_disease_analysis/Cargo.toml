@@ -1,0 +1,13 @@
+[package]
+name = "heart_disease_analysis"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+polars = { version = "0.39", features = ["csv", "lazy", "describe"] }
+ndarray = "0.15"
+linfa = "0.7"
+linfa-logistic = "0.7"
+linfa-preprocessing = "0.7"
+rand = "0.8"
+statrs = "0.16"

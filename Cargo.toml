@@ -3,5 +3,6 @@ members = [
     "learn_1_1_hello_world",
     "learn_1_2_hello_rust",
     "minigrep",
+    "src/heart_disease_analysis",
     "src/linalg_basics",
 ]
